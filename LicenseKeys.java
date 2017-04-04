@@ -1,4 +1,4 @@
-
+//package copartCodingChallenge;
 /*
  * The Problem:
 
@@ -19,21 +19,36 @@ public class LicenseKeys {
 	public static void main(String args[]){
 		String str = args[0];//represents the software license key
 		int k=Integer.parseInt(args[1]);//grouping length constant
+		
 		String key = str.replaceAll("[-]","");//removes all '-'
 		key = key.toUpperCase();//converts to uppercase
-		key = insertDashes(key,k);//inserts - at k th position
+		if(k<key.length()){//when the number of characters in each group is greater that the total number of characters
+			
+			int remainder = 0; //when the key cannot be equally divided into groups with kth character
+			remainder= key.length()%k;
+			if(remainder!=0){
+				//add '-' at every kth position and recursively call the remaining string, after the first group 
+				key =  (key.substring(0, remainder)+"-"+ insertDashes(key.substring(remainder,key.length()),k));
+			}
+			else{
+				key = insertDashes(key,k);//inserts - at k th position
+			}
+		}
+		
+		
 		System.out.println(key);
 		
 	}
 	static String insertDashes(String key,int k){
+		
+		
 		if(key.length()<=k){	//base case when the number of characters after the - is less than k,i.e last few characters
 			return key;	
 		}
 		else{
-			//add '-' at every kth position and recursively call the remaining string
-			return (key.substring(0, k) + "-" + insertDashes(key.substring(k,key.length()),k));
+			
+				return (key.substring(0, k)+"-" + insertDashes(key.substring(k,key.length()),k));		
 		}
-		
 		
 	}
 
