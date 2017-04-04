@@ -1,0 +1,53 @@
+<!---
+JS Library/framework* based - Nested ListView (Simple) (10 points)
+
+The Problem:
+
+JS based ListView - Must have multiple Nested list views - (eg) Countries, States, Cities.
+
+Single JSON response vs Multiple JSON response - Showcase both.
+Reuse components and reuse data from cache/store [*] - Use React or AngularJS or ember or backbone or one of the modern JS frameworks/libraries. Do not use JQuery or ExtJS
+--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+    <style>
+        ul {
+            clear: both;
+            list-style-type: none;
+        }
+
+        li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="nestedView" ng-controller="listController">
+    <ul ng-click="expand()">
+        <li class="created">
+            <b>Click here</b>
+        </li>
+    </ul>
+    <ul ng-repeat="l in list" ng-show="show">
+        <li>
+            Countries: {{l.countries}}
+        </li>
+        <li>
+            States: {{l.states}}
+        </li>
+        <li>
+            Cities: {{l.cities}}
+        </li>
+
+    </ul>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
