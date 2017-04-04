@@ -70,5 +70,5 @@ a). Import data from CSV file to DB (VehicleDetails.csv File attached). b). Get 
 
 Note: Make sure you don’t make same call to maps api for same location
 
-File: routes/index.js, app.js
+File: routes/index.js, routes/app.js
 Idea: Used nodejs
