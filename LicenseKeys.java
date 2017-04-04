@@ -1,4 +1,4 @@
-package copartCodingChallenge;
+
 /*
  * The Problem:
 
