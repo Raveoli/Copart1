@@ -1,8 +1,8 @@
-package copartCodingChallenge;
+//package copartCodingChallenge;
 /*
  * Convert String to Integer
 	Without using any Integer functions like parseInt/valueOf 
-	convert the String to Integer. e.g. String input = “1234” - > Integer output=1234.
+	convert the String to Integer. e.g. String input = â€œ1234â€ - > Integer output=1234.
 	
 	Vidya Sri Mani
 	vxm163230@utdallas.edu
