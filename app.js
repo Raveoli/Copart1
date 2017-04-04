@@ -1,48 +1,56 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+/**
+ * Created by raveenahegde on 04/04/17.
+ */
+/*
+* JS Library/framework* based - Nested ListView (Simple) (10 points)
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+ The Problem:
 
-var app = express();
+ JS based ListView - Must have multiple Nested list views - (eg) Countries, States, Cities.
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+ Single JSON response vs Multiple JSON response - Showcase both.
+ Reuse components and reuse data from cache/store [*] - Use React or AngularJS or ember or backbone or one of the modern JS frameworks/libraries. Do not use JQuery or ExtJS
+* */
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+var app = angular.module('nestedView', []);
 
-app.use('/', index);
-app.use('/users', users);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+app.controller ('listController', function ($scope, lists) {
+    $scope.list  = lists;
+   // console.log("lists"+JSON.stringify(lists));
+    $scope.show = false;
+
+    $scope.expand = function() {
+        //console.log("show")
+        $scope.show = true;
+    }
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+app.factory('lists', [function() {
+    var list = [
+        {
+            countries: 'India',
+            states: 'Karnataka',
+            cities: 'Bangalore',
+        },
+        {
+            countries: 'USA',
+            states: 'Texas',
+            cities: 'Dallas',
+        },
+        {
+            countries: 'USA',
+            states: 'California',
+            cities: 'LA',
+        },
+        {
+            countries: 'USA',
+            states: 'New York',
+            cities: 'New York',
+        }
+    ];
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+    return list;
 
-app.listen(8080);
 
-module.exports = app;
+}]);
