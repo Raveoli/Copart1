@@ -58,4 +58,17 @@ Reuse components and reuse data from cache/store [*] - Use React or AngularJS or
 File: nestedView.html,app.js
 
 Idea: Used angularjs
+---------------------------------------------------------------------------------------------------------------------------------
+Problem:
+Coding Exercises - Problem statements (Node.js or Ruby)(30 points)
 
+Solve using Ruby or Node.js:
+
+Move attached CSV data into DB and fetch lat, Long coordinates for Location column using google map API.
+
+a). Import data from CSV file to DB (VehicleDetails.csv File attached). b). Get Lat, Long coordinates for Location column in attached. CSV (you can use google map API) c). Create two columns in DB Lat, Long d). Add Lat, Long coordinates to Database for each Location in CSV.
+
+Note: Make sure you don’t make same call to maps api for same location
+
+File: routes/index.js, app.js
+Idea: Used nodejs
