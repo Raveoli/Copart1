@@ -43,3 +43,19 @@ Address:______ Street name 1: ______ Street Name 2:_____ City:_____ State:______
 File: index.html
 
 Idea: Used javascript to autocomplete phone number and used Google API to autofill address fields
+
+---------------------------------------------------------------------------------------------------------------------------------
+Problem:
+JS Library/framework* based - Nested ListView (Simple) (10 points)
+
+The Problem:
+
+JS based ListView - Must have multiple Nested list views - (eg) Countries, States, Cities.
+
+Single JSON response vs Multiple JSON response - Showcase both.
+Reuse components and reuse data from cache/store [*] - Use React or AngularJS or ember or backbone or one of the modern JS frameworks/libraries. Do not use JQuery or ExtJS
+
+File: nestedView.html,app.js
+
+Idea: Used angularjs
+
